@@ -1,5 +1,6 @@
 import express from 'express';
 import Users from '../models/users.js';
+import { get } from 'mongoose';
 const router = express.Router();
 
 router
@@ -21,6 +22,17 @@ router
             res.status(400).json({ message: error.message});
         }
     });
+router
+    .route('/:id')
+    .get(async (req, res) => {
+        try {
+            const user = await Users.findById(req.params.id);
+            if (!user) return res.status(404).json({ message: 'User not found'});
+            res.status(200).json(user);
+        } catch (error) {
+            res.status(500).json({ message: 'Server not responding'});
+        }
+    })
     
     
 
