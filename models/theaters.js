@@ -14,6 +14,5 @@ const theatersSchema = new mongoose.Schema({
     timestamps:true,
 });
 
-theatersSchema.index({ theaterId: 1});
 
 export default new mongoose.model('theaters', theatersSchema);

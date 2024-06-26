@@ -18,7 +18,6 @@ const usersSchema = new mongoose.Schema({
     timestamps:true,
 });
 
-usersSchema.index({email: 1});
 
 export default new mongoose.model('users', usersSchema);
 

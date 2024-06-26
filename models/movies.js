@@ -17,6 +17,5 @@ const moviesSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-moviesSchema.index({ title: 1});
 
 export default new mongoose.model('Movies', moviesSchema);
