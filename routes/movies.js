@@ -35,7 +35,7 @@ router
     .route('/:movies')
     .post( async (req, res) => {
         try {
-            const Movies = await Movies.find({title: req.params.movies}).limit(5);
+            const movies = await Movies.find({title: req.params.movies}).limit(5);
             res.send(readMovies);
 
         } catch (error) {
