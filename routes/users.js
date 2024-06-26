@@ -12,6 +12,16 @@ router
             res.status(500).json({ message: 'Server not responding'});
         }
     })
+    .post( async (req, res) => {
+        try {
+            const newUser = new Users(req.body);
+            await newUser.save();
+            res.status(201).json(newUser);
+        } catch (error) {
+            res.status(400).json({ message: error.message});
+        }
+    });
+    
     
 
 export default router;
