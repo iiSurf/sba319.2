@@ -33,6 +33,24 @@ router
             res.status(500).json({ message: 'Server not responding'});
         }
     })
+    .put(async (req, res) => {
+        try {
+            const updatedUser = await Users.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
+            if (!updatedUser) return res.status(404).json({message: 'User not found'});
+            res.status(200).json(updatedUser);
+        } catch (error) {
+            res.status(400).json({message: error.message});
+        }
+    })
+    .delete(async (req, res) => {
+        try {
+            const deletedUser = await Users.findByIdAndDelete(req.params.id);
+            if (!deletedUser) return res.status(404).json({message: 'User not found'});
+            res.status(200).json({message: 'User deleted'});
+        } catch (error) {
+            res.status(500).json({message: 'Server not responding'});
+        }
+    });
     
     
 
