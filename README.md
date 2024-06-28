@@ -31,7 +31,7 @@
     "title": "Inception",
     "year": 2010,
     "runtime": 148
-} ```
+}
 - PUT / movies
 
 - Updates a movie by its ID.
@@ -43,7 +43,7 @@
     "title": "Inception",
     "year": 2010,
     "runtime": 150
-} ```
+}
 - DELETE / movies
 
 - Deletes a movie by its ID.
@@ -67,7 +67,7 @@
 ``` {
     "location": "Downtown",
     "theaterId": 1
-``` }
+}
 - PUT / theaters
 
 - Updates a theater by its ID.
@@ -78,7 +78,7 @@
 ``` {
     "location": "Midtown",
     "theaterId": 1
-``` }
+}
 - DELETE / theaters
 
 - Deletes a theater by its ID.
@@ -103,7 +103,7 @@
     "name": "John Doe",
     "email": "john@example.com",
     "password": "password123"
-} ```
+}
 - PUT / users
 
 - Updates a user by their ID.
@@ -115,7 +115,7 @@
     "name": "John Smith",
     "email": "john.smith@example.com",
     "password": "newpassword123"
-} ```
+}
 - DELETE / users
 
 - Deletes a user by their ID.
