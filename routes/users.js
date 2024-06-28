@@ -1,6 +1,6 @@
 import express from 'express';
 import Users from '../models/users.js';
-import { get } from 'mongoose';
+// import { get } from 'mongoose';
 const router = express.Router();
 
 router

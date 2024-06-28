@@ -25,7 +25,7 @@ router
     .route('/:id')
     .get(async (req, res) => {
         try {
-            const theater = await Theaters.findById(req.prarams.id);
+            const theater = await Theaters.findById(req.params.id);
             if (!theater) return res.status(404).json({message: 'Theater not found'});
             res.status(200).json({message: 'Server not responding'});
         } catch (error) {

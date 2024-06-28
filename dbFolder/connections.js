@@ -8,7 +8,7 @@ export function connectDB () {
     const conn = mongoose.connection;
     conn.on('error', (e) => console.error(e));
     conn.on('open', () => console.log('Connected to the Database!'));
-    conn.off('close', () => console.log('Disconnected to Database!!'));
+    conn.on('close', () => console.log('Disconnected to Database!!'));
 };
 
 

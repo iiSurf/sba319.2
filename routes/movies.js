@@ -5,12 +5,8 @@ const router = express.Router();
 router
     .route('/')
     .get( async (req, res) => {
-
-        // const readMovies = await Movies.find({}).limit(5);
-        // console.log(readMovies);
         // res.send(readMovies);
         try {
-            // res.send('Testing.... Testing..... TESTING!!!!! ~ Patrick Star');
             const movies = await Movies.find({}).limit(15);
             // console.log(readMovies);
             res.status(200).json(movies);
